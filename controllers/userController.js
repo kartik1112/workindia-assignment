@@ -13,7 +13,7 @@ const register = async (req, res) => {
       "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)",
       [name, email, hashedPassword, role || "user"]
     );
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(201).json({ message: "Registration successful" });
   } catch (err) {
     res
       .status(400)

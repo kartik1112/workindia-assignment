@@ -1,8 +1,8 @@
-CREATE DATABASE train_booking;
+CREATE DATABASE IF NOT EXISTS train_booking;
 
 USE train_booking;
 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE users (
     role ENUM('user', 'admin') DEFAULT 'user'
 );
 
-CREATE TABLE trains (
+CREATE TABLE IF NOT EXISTS trains (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     source VARCHAR(100) NOT NULL,
@@ -18,7 +18,7 @@ CREATE TABLE trains (
     seats_available INT NOT NULL
 );
 
-CREATE TABLE bookings (
+CREATE TABLE IF NOT EXISTS bookings(
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
     train_id INT NOT NULL,
